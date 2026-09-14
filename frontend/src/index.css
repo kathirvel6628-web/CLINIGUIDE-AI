@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-paper text-ink font-body;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1, h2, h3, .display {
+  @apply font-display;
+}
+
+/* Large, high-contrast touch targets throughout - this app is designed
+   first for elderly and low-literacy users, not for density. */
+button, input, select, textarea {
+  font-size: 1rem;
+}
+
+.tap-target {
+  min-height: 48px;
+}
+
+:focus-visible {
+  outline: 3px solid #2F5D50;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
